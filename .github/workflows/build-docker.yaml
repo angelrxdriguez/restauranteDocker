@@ -1,6 +1,9 @@
 name: Crear y subir imagen Docker
-on: 
-  workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   publish_images:
@@ -9,7 +12,7 @@ jobs:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
-      - name: Iniciar sesión en Docker Hub
+      - name: Iniciar sesion en Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Construir imagen Docker
