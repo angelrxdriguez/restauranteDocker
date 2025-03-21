@@ -9,7 +9,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: construir imagen
-        run: docker build -t angelrxdriguez/ejemplo-actions:latest
+        run: docker build -t angelrxdriguez/ejemplo-actions:latest .
       - name: subir imagen a dockerhub
         run: docker push angelrxdriguez/ejemplo-actions:latest
 
