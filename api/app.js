@@ -27,7 +27,7 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   }
 });
-
+// deberia subirse solo
 let collection;
 
 // Función para conectar con la base de datos
